@@ -1,0 +1,34 @@
+# Using Python 2.7
+# Run one of the following commands in command line, then wait until the end of the code, and all the figures will be displayed, and stored in .svg format within the subfolder data/
+# The code is not 100% stable, so if it crashes, simply restart it with the same command.
+# Adding rerun as an option will restart the analysis
+
+## To use data from a .csv file such as exampledata.csv
+
+python bootstrap.py data=exampledata
+
+## To use data from two different files (final outputs will be compared between datasets)
+
+python bootstrap.py data=exampledata data=exampledata2
+
+
+## For a simulation of a community with a gaussian iid prior
+
+# 8 species
+python bootstrap.py simugauss
+
+#16 species
+python bootstrap.py simugaussS16
+
+#25 species
+python bootstrap.py simugaussS25
+
+
+## For a simulation of a community with a low-dimensional (CC tradeoff) prior
+
+python bootstrap.py simuccopt[S16/S25]
+
+
+## To recreate a simulated data file named exampledata.csv then reanalyze it
+
+python bootstrap.py  make=exampledata data=exampledata rerun
